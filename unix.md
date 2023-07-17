@@ -131,3 +131,23 @@ drwxr-xr-x  9 mehul mehul      4096 Jun  5  2022 Python-3.9.1
 </pre>
 
 > +4n skips four fields (fields are separated by blanks).
+
+***Process*** :
+- There are two ways to run a command.
+
+- Foreground Processes 
+-  Background Processes (&)
+
+> Parent and Child Processes.
+
+- Each unix process has two ID numbers assigned to it: The Process ID (pid) and the Parent process ID (ppid). Each user process in the system has a parent process.
+
+> Zombie and Orphan Processes.
+
+- Normally, when a child process is killed, the parent process is updated via a SIGCHLD signal. Then the parent can do some other task or restart a new child as needed. However, sometimes the parent process is killed before its child is killed. In this case, the "parent of all processes," the init process, becomes the new PPID (parent process ID). In some cases, these processes are called orphan processes.
+
+> Daemon Processes.
+
+- Daemons are system-related background processes that often run with the permissions of root and services requests from other processes.
+
+- A daemon has no controllig terminal. It can't open **/dev/tty**. If you do a "ps -ef" and look at the tty field, all daemons will have a ? for the tty.
