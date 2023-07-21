@@ -202,3 +202,100 @@ echo "LOGICAL_AND = $((1 && 0))"
 echo "LOGICAL_OR  = $((0 || 1))"
 echo "LOGICAL_Neg = $((!0))"
 ```
+
+**Shell Loop Controler**
+
+```bash
+for itr in `seq 1 10`
+do
+    if [ $itr -eq 9 ] # itr == 0
+    then 
+        break
+    fi
+    echo $a
+done
+```
+
+```bash
+for itr in $(seq 1 10)
+do 
+    if [ `expr $itr % 2` -eq 0 ]
+    then 
+        continue
+    fi
+    echo $itr
+done
+```
+
+
+***Substitution***
+
+- Substition is a mechanism that is followed by programmers in a shell script.
+
+> Interpretation of backslash escapes. ``
+
+```bash
+$ echo `date`
+```
+
+***Shell Metacharacters***
+
+**Tilde (~)** : 
+
+- The tilde(~) character represents the home directory of the current user.
+
+**Dash (-)** :
+
+- The dash (-) character in the shell represents the previous working directory. You can use the dash character to switch between two specific directories.
+
+```bash
+$ cd -
+```
+
+```bash
+$ dirs  # Present directors on stack.
+```
+
+- Bash will keep a history of the directories you visit, you just have to ask. Bash stores the history in a stack and uses the commands pushd and popd to manage the stack.
+
+> pushd add on to a directory stack
+
+> popd remove off of a directory stack
+
+> dirs view directory stack
+
+> dirs -p "display directory entries one per line"
+
+> dirs -c "clear the directory stack"
+
+**File Name Substitution Metacharacters**
+
+- Asterisk (*) Character
+
+    - The asterisk (*) character is also called the wild card character and represents zero or more characters, except the leading period (.) of a hidden ﬁle.
+
+```bash 
+$ ls *3
+```
+
+**Question Mark (?)**
+
+- The question mark (?) character represents any single character except the leading period (.) of a hidden file.
+
+```bash
+$ ls dir?
+dir1:
+- coffes fruit trees
+
+dir2:
+- beans notes recipes
+```
+
+**Square Bracket ([])**
+
+- The square bracket ([]) characters represent a set or range of characters for a single character position. A set of characters is any number of speciﬁc characters; for example, [acb]. The characters in a set do not generally need to be in any order. For example, [abc] is the same as [cab].
+
+```bash
+$ ls [a-z]*
+$ ls [fp]*
+```
