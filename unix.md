@@ -61,8 +61,8 @@ $ ls ch*.doc
 ***Environment variable*** :
 
 ```bash
-$TEST="Unix Programming"
-$echo $TEST
+$ TEST="Unix Programming"
+$ echo $TEST
 ```
 
 - Note that the environment variable are set without using the `$` sign but while accessing them we use the `$` sign as prefix. 
@@ -136,7 +136,7 @@ drwxr-xr-x  9 mehul mehul      4096 Jun  5  2022 Python-3.9.1
 - There are two ways to run a command.
 
 - Foreground Processes 
--  Background Processes (&)
+- Background Processes (&)
 
 > Parent and Child Processes.
 
